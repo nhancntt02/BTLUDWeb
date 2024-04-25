@@ -28,6 +28,7 @@
         </div>
     </form>
     <button class="btn btn-primary" @click="submit"><i class="fas fa-save"></i> Lưu</button>
+    <button class="btn btn-secondary mx-2" @click="back"><i class="fas fa-arrow-left"></i> Trở về</button>
 </template>
 <script>
     import employeeService from "@/services/employee.service";
@@ -46,6 +47,9 @@
                 } catch (error) {
                     console.log(error);
                 }
+            },
+            back() {
+                this.$router.go(-1);
             }
         }
     }
